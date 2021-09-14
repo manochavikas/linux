@@ -418,6 +418,8 @@ config CPU_V7
 	select CPU_SPECTRE if MMU
 	select CPU_THUMB_CAPABLE
 	select CPU_TLB_V7 if MMU
+	select CPU_DCACHE_DISABLE
+	select CPU_ICACHE_DISABLE
 
 # ARMv7M
 config CPU_V7M
@@ -791,7 +793,7 @@ config CPU_ICACHE_MISMATCH_WORKAROUND
 
 config CPU_DCACHE_DISABLE
 	bool "Disable D-Cache (C-bit)"
-	depends on (CPU_CP15 && !SMP) || CPU_V7M
+	depends on CPU_V7
 	help
 	  Say Y here to disable the processor data cache. Unless
 	  you have a reason not to or are unsure, say N.
