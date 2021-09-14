@@ -1269,7 +1269,7 @@
 		pins1 {
 			pinmux = <STM32_PINMUX('C', 8, AF12)>, /* SDMMC1_D0 */
 				 <STM32_PINMUX('C', 9, AF12)>, /* SDMMC1_D1 */
-				 <STM32_PINMUX('C', 10, AF12)>, /* SDMMC1_D2 */
+				 <STM32_PINMUX('E', 6, AF8)>, /* SDMMC1_D2 */
 				 <STM32_PINMUX('C', 11, AF12)>, /* SDMMC1_D3 */
 				 <STM32_PINMUX('D', 2, AF12)>; /* SDMMC1_CMD */
 			slew-rate = <1>;
@@ -1288,7 +1288,7 @@
 		pins1 {
 			pinmux = <STM32_PINMUX('C', 8, AF12)>, /* SDMMC1_D0 */
 				 <STM32_PINMUX('C', 9, AF12)>, /* SDMMC1_D1 */
-				 <STM32_PINMUX('C', 10, AF12)>, /* SDMMC1_D2 */
+				 <STM32_PINMUX('E', 6, AF8)>, /* SDMMC1_D2 */
 				 <STM32_PINMUX('C', 11, AF12)>; /* SDMMC1_D3 */
 			slew-rate = <1>;
 			drive-push-pull;
@@ -1312,7 +1312,7 @@
 		pins {
 			pinmux = <STM32_PINMUX('C', 8, ANALOG)>, /* SDMMC1_D0 */
 				 <STM32_PINMUX('C', 9, ANALOG)>, /* SDMMC1_D1 */
-				 <STM32_PINMUX('C', 10, ANALOG)>, /* SDMMC1_D2 */
+				 <STM32_PINMUX('E', 6, ANALOG)>, /* SDMMC1_D2 */
 				 <STM32_PINMUX('C', 11, ANALOG)>, /* SDMMC1_D3 */
 				 <STM32_PINMUX('C', 12, ANALOG)>, /* SDMMC1_CK */
 				 <STM32_PINMUX('D', 2, ANALOG)>; /* SDMMC1_CMD */
@@ -2079,6 +2079,19 @@
 				 <STM32_PINMUX('A', 12, ANALOG)>; /* OTG_FS_DP */
 		};
 	};
+	i2c4_pins_s40: i2c4-1 {
+		pins {
+			pinmux = <STM32_PINMUX('B', 7, AF6)>; /* I2C4_SDA */
+			bias-disable;
+			drive-open-drain;
+			slew-rate = <0>;
+		};
+	};
+	i2c4_sleep_pins_s40: i2c4-sleep-1 {
+		pins {
+			pinmux = <STM32_PINMUX('B', 7, ANALOG)>; /* I2C4_SDA */
+		};
+	};
 };
 
 &pinctrl_z {
@@ -2099,8 +2112,7 @@
 
 	i2c4_pins_a: i2c4-0 {
 		pins {
-			pinmux = <STM32_PINMUX('Z', 4, AF6)>, /* I2C4_SCL */
-				 <STM32_PINMUX('Z', 5, AF6)>; /* I2C4_SDA */
+			pinmux = <STM32_PINMUX('Z', 4, AF6)>; /* I2C4_SCL */
 			bias-disable;
 			drive-open-drain;
 			slew-rate = <0>;
@@ -2109,8 +2121,7 @@
 
 	i2c4_sleep_pins_a: i2c4-sleep-0 {
 		pins {
-			pinmux = <STM32_PINMUX('Z', 4, ANALOG)>, /* I2C4_SCL */
-				 <STM32_PINMUX('Z', 5, ANALOG)>; /* I2C4_SDA */
+			pinmux = <STM32_PINMUX('Z', 4, ANALOG)>; /* I2C4_SCL */
 		};
 	};
 

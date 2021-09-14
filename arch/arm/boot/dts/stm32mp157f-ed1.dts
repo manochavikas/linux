@@ -12,7 +12,7 @@
 #include "stm32mp15xx-edx.dtsi"
 
 / {
-	model = "STMicroelectronics STM32MP157F eval daughter";
+	model = "s40 STM32MP157F board";
 	compatible = "st,stm32mp157f-ed1", "st,stm32mp157";
 
 	chosen {
